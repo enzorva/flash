@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flash/constants.dart';
 
 class LoginScreen extends StatefulWidget {
-  LoginScreen({super.key});
+  const LoginScreen({super.key});
 
   static const String id = 'login_screen';
 
@@ -33,6 +33,8 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 48.0,
             ),
             TextField(
+              keyboardType: TextInputType.emailAddress,
+              textAlign: TextAlign.center,
               onChanged: (value) {
                 //Do something with the user input.
               },
@@ -43,6 +45,8 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 8.0,
             ),
             TextField(
+              obscureText: true,
+              textAlign: TextAlign.center,
               onChanged: (value) {
                 //Do something with the user input.
               },
@@ -53,9 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 24.0,
             ),
             RoundedButton(
-                title: 'Log In',
-                colour: Colors.lightBlueAccent,
-                onPressed: () {})
+                title: 'Log In', colour: Colors.lightBlueAccent, tap: () {})
           ],
         ),
       ),
